@@ -5,6 +5,7 @@
   	<div class="list list-inset">
   		<!-- Allows user input -->
   		<ion-toggle toggle-class="toggle-calm" ng-model="settingsList.organic">Want it to be organic?</ion-toggle>
+      <ion-toggle ng-model="settingsList.verified" toggle-class="toggle-calm">verify?</ion-toggle>
 	    <label class="item item-input">
 	      <i class="icon ion-search placeholder-icon"></i>
 	      <input type="text" ng-model="settingsList.searchInput" placeholder="year of make?">
@@ -17,7 +18,7 @@
 	      <i class="icon ion-search placeholder-icon"></i>
 	      <input type="text" ng-model="settingsList.ibu" placeholder="IBU">
 	    </label>
-	    <ion-toggle ng-model="settingsList.verified" toggle-class="toggle-calm">verify?</ion-toggle>
+
 
 
   	</div>
