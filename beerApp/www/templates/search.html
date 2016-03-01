@@ -1,0 +1,34 @@
+<html>
+  <head>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<ion-view view-title="Where My Beer At?">
+  <ion-content>
+  <!-- List Inset puts searched items into list -->
+  	<div class="list list-inset">
+  		<!-- Allows user input -->
+  		<ion-toggle toggle-class="toggle-calm" ng-model="settingsList.organic">Want it to be organic?</ion-toggle>
+	    <label class="item item-input">
+	      <i class="icon ion-search placeholder-icon"></i>
+	      <input type="text" ng-model="settingsList.searchInput" placeholder="year of make?">
+	    </label>
+	    <label class="item item-input">
+	      <i class="icon ion-search placeholder-icon"></i>
+	      <input type="text" ng-model="settingsList.abv" placeholder="How much of the alcohol?">
+	    </label>
+	    <label class="item item-input">
+	      <i class="icon ion-search placeholder-icon"></i>
+	      <input type="text" ng-model="settingsList.ibu" placeholder="IBU">
+	    </label>
+	    <ion-toggle ng-model="settingsList.verified" toggle-class="toggle-calm">verify?</ion-toggle>
+
+
+  	</div>
+  </ion-content>
+  <!-- Search bar -->
+  <div class="bar bar-footer bar-balanced" ng-click="search()">
+  		<div class="title">Search</div>
+  </div>
+
+</ion-view>
+<head>
+</html>

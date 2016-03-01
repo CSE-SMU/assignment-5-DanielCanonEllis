@@ -1,0 +1,22 @@
+
+<ion-view>
+  <ion-content>
+    <div class="bar bar-header">
+      <h1 class="title">{{itemDetails.nameDisplay}}</h1>
+    </div>
+    <div class="item item-image">
+      <img src={{itemDetails.labels.large}}>
+    </div>
+    <div class="card"><b>Description: </b>
+      <div class="item item-text-wrap">
+        {{itemDetails.description}}
+      </div>
+    </div>
+    <ion-list>
+      <ion-item><b>Year of Make: </b>{{itemDetails.year}}</ion-item>
+      <ion-item><b>Alc Cont: </b>{{itemDetails.abv}}%</ion-item>
+      <ion-item><b>IBU: </b>{{itemDetails.ibu}}</ion-item>
+      <ion-item><b>Ingedients: </b>{{itemDetails.withIngredients}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
