@@ -21,33 +21,35 @@ app.controller('SearchCtrl', function($scope, $state, $http, BeerData) {
   $scope.search = function() {
 
     if($scope.settingsList.organic === true) {
-      $scope.settingsList.organic = "Y";
+      $scope.settingsList.organic = "y";
     } else {
-      $scope.settingsList.organic = "N";
+      $scope.settingsList.organic = "n";
     }
 
     if($scope.settingsList.verified === true) {
-      $scope.settingsList.verified = "Y";
+      $scope.settingsList.verified = "y";
     } else {
-      $scope.settingsList.verified = "N";
+      $scope.settingsList.verified = "n";
     }
 
     console.log('made it to search');
     $http({
       method: 'GET',
-      url: 'https://salty-taiga-88147.herokuapp.com/beers', // the link to proxy
+      //link to the proxy given to us by Professor Matthew
+      url: 'https://salty-taiga-88147.herokuapp.com/beers',
       params: {abv: $scope.settingsList.abv, ibu: $scope.settingsList.ibu, isOrganic: $scope.settingsList.organic, year: $scope.settingsList.searchInput, verified: $scope.settingsList.verified}
-      //If call successful, store response into BeerData
+
     }).then(function successCallback(response) {
-      BeerData.data = response.data.data;   // save the response data in the factory
-      //console.log(BeerData.data.data[0].id); //.data[0].id
-      $state.go('app.beers');          // go to the beer results state
+      BeerData.data = response.data.data;
+
+      $state.go('app.beers');
     }, function errorCallBack(response){
       console.log('fail');
     });
   }
 })
 
+//some controllers we made in class with Professer Matthew
 app.controller('BeersCtrl', function($scope, $http, $state, BeerData, beerDetails) {
 
   console.log('Made ittobeer');
